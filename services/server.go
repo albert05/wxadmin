@@ -6,7 +6,7 @@ import (
 	"fmt"
 )
 
-func init() {
+func InitConfig() {
 	// init mysql
 	db_host := beego.AppConfig.String("db_host")
 	db_port := beego.AppConfig.String("db_port")
