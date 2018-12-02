@@ -50,7 +50,7 @@ $(function(){
                 return;
             }
             changes.Id = data.Id;
-            vac.ajax(URL+'/UpdateBanner', changes, 'POST', function(r){
+            vac.ajax(URL+'/update', changes, 'POST', function(r){
                 if(!r.status){
                     vac.alert(r.info);
                 }else{
@@ -88,7 +88,7 @@ $(function(){
             iconCls:'icon-save',
             handler:function(){
                 $("#form1").form('submit',{
-                    url:URL+'/AddBanner',
+                    url:URL+'/add',
                     onSubmit:function(){
                         return $("#form1").form('validate');
                     },
@@ -156,7 +156,7 @@ function delrow(){
                 vac.alert("请选择要删除的行");
                 return;
             }
-            vac.ajax(URL+'/DelBanner', {Id:row.Id}, 'POST', function(r){
+            vac.ajax(URL+'/del', {Id:row.Id}, 'POST', function(r){
                 if(r.status){
                     $("#datagrid").datagrid('reload');
                 }else{
